@@ -1,0 +1,7 @@
+Expand to full Wheel Decide link generator
+
+- Add sections for users to add wheel duration, title. diameter and removove segment on landing
+- HTTP values: width(wheel diameter, 100-3000), t(wheel title), time(duration), remove(if 1, remove segment upon landing)
+- Add conditions to ignore colours and weight if they are all the same value for URLs
+- Add menu bar and credits
+- Add button to copy link and values
