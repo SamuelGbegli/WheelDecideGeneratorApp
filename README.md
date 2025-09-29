@@ -4,6 +4,7 @@
 
 This is a desktop application made with Windows Presentation Framework (WPF), designed to easily create content to use for the site Wheel Decide ([https://wheeldecide.com/](https://wheeldecide.com/)).
 
+<img width="786" height="443" alt="Main window" src="https://github.com/user-attachments/assets/a7f6b336-7ff9-4c6b-9d73-f04d2a156bad" />
 
 
 Instructions on using the application can be found in the section "How to use the application".
@@ -18,10 +19,10 @@ I have been using Wheel Decide for years as a way to choose from a large set of 
 
 ## Features
 
-* A grid to add, edit and remove wheel segments
-* A multiplier to determine how many times each segment will appear on the wheel
-* A toggle to shuffle the positions of the wheel's segments (including duplicates)
-* A dialog to copy the wheel segments' values, colours and weights (relative proportional size)
+- A grid to add, edit and remove wheel segments
+- A multiplier to determine how many times each segment will appear on the wheel
+- A toggle to shuffle the positions of the wheel's segments (including duplicates)
+- A dialog to copy the wheel segments' values, colours and weights (relative proportional size)
 
 ## How to use the application
 
@@ -37,25 +38,28 @@ Below is an overview of the application's controls and functions:
 
 
 
-* Clicking "Add" will create a new segment value, which will appear in the grid. Up to 100 segments can be created as this is the maximum allowed by Wheel Decide.
-* Clicking "Remove selected" will remove the currently selected values from the grid.
-* Clicking "Remove all" will clear all values from the grid.
-* A segment's properties can be edited by clicking on a row's cells in the grid. Values that can be edited are value (text input), background colour and text colour (colour dropdown/input) and weight (decimal value between 0.1 and 10 inclusive, in increments of 0.1).
-* The segment multiplier value will duplicate the number of segments that will appear on the wheel. The minimum value is 1 (i.e., each segment will appear once) and the maximum is set to how many times the current set of values can be multiplied before exceeding 100.
-* The "Shuffle wheel segments on generation" randomly changes the positon of the wheel's segments prior to generation. The positions will vary every time the wheel's data is generated.
-* The "Generate" button will open a dialog showing the values that can be copied directly to Wheel Decide. A URL is also provided to directly access the wheel from the site.
+- Clicking "Add" will create a new segment value, which will appear in the grid. Up to 100 segments can be added as this is the maximum allowed by Wheel Decide.
+- Clicking "Remove selected" will remove the currently selected values from the grid.
+- Clicking "Remove all" will clear all values from the grid.
+- A segment's properties can be edited by clicking on a row's cells in the grid. Values that can be edited are:
+  - Value (text input)
+  - Background colour and text colour (colour dropdown/input)
+  - Weight (decimal value between 0.1 and 10 inclusive, in increments of 0.1)
+- The segment multiplier value will duplicate the number of segments that will appear on the wheel. The minimum value is 1 (i.e., each segment will appear once) and the maximum is set to how many times the current set of values can be multiplied before exceeding 100.
+- The "Shuffle wheel segments on generation" randomly changes the positon of the wheel's segments prior to generation. The positions will vary every time the wheel's data is generated.
+- The "Generate" button will open a dialog showing the values that can be copied directly to Wheel Decide. A URL is also provided to directly access the wheel from the site.
 
 ### Output dialog
 
 When the "Generate" button is clicked, a dialog will open with the following values:
 
-* Values (formatted with line breaks)
-* Background colours (formatted with commas)
-* Text colours (formatted with commas)
-* Weights (formatted with commas)
-* A URL to access the wheel directly
+- Values (formatted with line breaks)
+- Background colours (formatted with commas)
+- Text colours (formatted with commas)
+- Weights (formatted with commas)
+- A URL to access the wheel directly
 
-
+<img width="236" height="393" alt="Output dialog" src="https://github.com/user-attachments/assets/f4bbe7d2-b4e9-4faa-ac79-7685e9b87469" />
 
 Each value can be selected and manually copied to be used.
 
@@ -63,7 +67,7 @@ Each value can be selected and manually copied to be used.
 
 This is still a work in progress, and I have listed a roadmap of tasks I plan to do in the future:
 
-* Expand the application to create full wheels, including options to set the wheel's title, spin duration, diameter and whether a segment is removed from the wheel once selected
-* The ability to save and load wheel designs, possibly via JSON
-* Buttons in the output dialog to more easily copy the wheel's link to the clipboard
-* Data validation to ensure values are not blank or white space
+- Expand the application to create full wheels, including options to set the wheel's title, spin duration, diameter and whether a segment is removed from the wheel once selected
+- The ability to save and load wheel designs, possibly via JSON
+- Buttons in the output dialog to more easily copy the wheel's link to the clipboard
+- Data validation to ensure values are not blank or white space
