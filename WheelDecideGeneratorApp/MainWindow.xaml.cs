@@ -38,7 +38,7 @@ namespace WheelDecideGeneratorApp
         void updateAddButtonAndMultiplierMaximum()
         {
             //Disables the add button if adding a new value would mean an output of over 100
-            if((Segments.Count + 1) * multiplierUpDown.Value > 100)
+            if(Segments.Count * (multiplierUpDown.Value + 1) > 100)
             {
                 addButton.IsEnabled = false;
             }
