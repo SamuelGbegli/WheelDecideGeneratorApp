@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TextCopy;
 
 namespace WheelDecideGeneratorApp
 {
@@ -19,18 +20,14 @@ namespace WheelDecideGeneratorApp
     /// </summary>
     public partial class OutputWindow : Window
     {
-        TextOutput TextOutput;
+        WheelOutput WheelOutput;
 
-        public OutputWindow(TextOutput textOutput)
+        public OutputWindow(WheelOutput wheelOutput)
         {
             InitializeComponent();
-            TextOutput = textOutput;
+            WheelOutput = wheelOutput;
 
-            ValuesTextBox.Text = textOutput.ValueString;
-            BackgroundTextBox.Text = textOutput.BackgroundColourString;
-            TextTextBox.Text = textOutput.TextColourString;
-            WeightTextBox.Text = textOutput.WeightString;
-            URLTextBox.Text = textOutput.URL;
+            URLTextBox.Text = WheelOutput.GetWheelUrl();
         }
 
         /// <summary>
@@ -41,6 +38,30 @@ namespace WheelDecideGeneratorApp
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void CopyLinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            ClipboardService.SetText(WheelOutput.GetWheelUrl());
+        }
+
+        private void CopyValueButton_Click(object sender, RoutedEventArgs e)
+        {
+            switch (ValueComboBox.SelectedIndex)
+            {
+                case 0:
+                    ClipboardService.SetText(WheelOutput.GetValues);
+                    break;
+                case 1:
+                    ClipboardService.SetText(WheelOutput.GetBackgroundColours);
+                    break;
+                case 2:
+                    ClipboardService.SetText(WheelOutput.GetTextColours);
+                    break;
+                case 3:
+                    ClipboardService.SetText(WheelOutput.GetWeights);
+                    break;
+            }
         }
     }
 }

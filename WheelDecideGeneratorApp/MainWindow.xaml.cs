@@ -175,9 +175,18 @@ namespace WheelDecideGeneratorApp
                     outputList[i] = value;
                 }
             }
-            var textOutput = new TextOutput(outputList);
+            //var textOutput = new TextOutput(outputList);
+            var wheelOutput = new WheelOutput
+            {
+                WheelTitle = WheelTitleTextBox.Text,
+                Segments = outputList,
+                SpinDuration = (int) SpinTimeUpDown.Value,
+                WheelWidth = (int)WheelDiameterUpDown.Value,
+                RemoveSelectedSegment = (bool)RemoveSelectedValueCheckBox.IsChecked,
 
-            new OutputWindow(textOutput).ShowDialog();
+            };
+
+            new OutputWindow(wheelOutput).ShowDialog();
         }
 
     }

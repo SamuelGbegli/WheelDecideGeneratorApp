@@ -6,39 +6,43 @@
         xmlns:local="clr-namespace:WheelDecideGeneratorApp"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Output" Height="400" Width="250">
+        Title="Output" Height="225" Width="450">
     <Grid Margin="5">
-        <DockPanel>
-            <StackPanel DockPanel.Dock="Bottom">
-                <StackPanel.Resources>
-                    <Style TargetType="StackPanel">
-                        <Setter Property="Margin" Value="0,4"/>
-                    </Style>
-                </StackPanel.Resources>
-                <StackPanel>
-                    <TextBlock Text="Background values"/>
-                    <TextBox x:Name="BackgroundTextBox" IsReadOnly="True"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="Text values"/>
-                    <TextBox x:Name="TextTextBox" IsReadOnly="True"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="Weight values"/>
-                    <TextBox x:Name="WeightTextBox" IsReadOnly="True"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="URL"/>
-                    <TextBox x:Name="URLTextBox" IsReadOnly="True"/>
-                </StackPanel>
-                <StackPanel>
-                    <Button x:Name="CloseButton" HorizontalAlignment="Right" Width="100" Content="Close" Click="CloseButton_Click"/>
-                </StackPanel>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Margin" Value="4"/>
+                </Style>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="80"/>
+                    <Setter Property="Margin" Value="4,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <StackPanel>
+                <Label Content="Copy link"/>
+                <DockPanel>
+                    <Button Name="CopyLinkButton"
+                            DockPanel.Dock="Right"
+                            Content="Copy" Click="CopyLinkButton_Click"/>
+                    <TextBox Name="URLTextBox" IsReadOnly="True"/>
+                </DockPanel>
             </StackPanel>
-            <DockPanel>
-                <TextBlock DockPanel.Dock="Top" Text="Values"/>
-                <TextBox x:Name="ValuesTextBox" IsReadOnly="True"/>
-            </DockPanel>
-        </DockPanel>
+
+            <StackPanel>
+                <Label Content="Copy values"/>
+                <DockPanel>
+                    <Button Name="CopyValueButton"
+                            DockPanel.Dock="Right"
+                            Content="Copy" Click="CopyValueButton_Click"/>
+                    <ComboBox Name="ValueComboBox" SelectedIndex="0">
+                        <ComboBoxItem Content="Values"/>
+                        <ComboBoxItem Content="Background colours"/>
+                        <ComboBoxItem Content="Text colours"/>
+                        <ComboBoxItem Content="Weights"/>
+                    </ComboBox>
+                </DockPanel>
+            </StackPanel>
+            <Button x:Name="CloseButton" HorizontalAlignment="Right" Width="100" Content="Close" Click="CloseButton_Click" Margin="24"/>
+        </StackPanel>
     </Grid>
 </Window>
